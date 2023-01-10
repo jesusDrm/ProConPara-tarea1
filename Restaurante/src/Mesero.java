@@ -1,10 +1,16 @@
-public class Mesero {
-    String orden;
+import java.util.LinkedList;
+import java.util.HashMap;
 
-    public String getOrden() {
-        return orden;
+public class Mesero {
+    private String nombre;
+
+    public Mesero(String nombre){
+        this.nombre = nombre;
     }
-    public void setOrden(String orden) {
-        this.orden = orden;
+
+    public LinkedList<String> tomarOrden(HashMap<String, Double> menu, Cliente c){
+        System.out.println("mesero "+this.nombre+" atendiendo al cliente "+c.getNombre());
+        return c.ordenar(menu);
     }
+    
 }
